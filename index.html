@@ -62,103 +62,15 @@
             </div>
             <!-- Single Lyrics -->
             <div class="single-lyrics text-center">
-                <button class="btn go-back">&lsaquo;</button>
-                <h2 class="text-success mb-4">Pentatonix - Na Na Na</h2>
-                <pre class="lyric text-white">
-    Wont go whistling like the wind blows,
-    Looking out my window,
-    Just to see the shine
-    Maybe you might call it crazy,
-    How Im acting lately,
-
-    Skipping through the sky
-
-
-
-     I see so clearly,
-
-    Why Im always feeling free.
-
-    So I sleep when my dreams,
-
-    Looking like reality
-
-
-
-    (Gonna feel it! Na na na...) x4
-
-
-
-    Gonna feel it!
-
-
-
-    I know where the greener grass grows
-
-    Youll just have to follow
-
-    To the other side
-
-
-
-     Lets go tiptoe on a tight rope,
-
-    Fallings only natural
-
-    Just spread your wings and fly
-
-
-
-    Youll see so clearly,
-
-    Why Im always feeling free.
-
-    So I sleep when our dreams
-
-    Looking like reality
-
-
-
-    (Gonna feel it! Na na na...) x4
-
-
-
-    Bring it down like
-
-    Ohh way oh
-
-    Yeah yeah yeah yeah yeah yeah
-
-    Break it down like
-
-    Ohh way oh
-
-     Yeah, yeah, yeah...
-
-    All around like
-
-    Ohh way oh
-
-    Yeah, yeah, yeah...
-
-    Sing it loud like!
-
-    Ohh way oh
-
-    Ah oo oo ooo
-
-
-
-     Gonna feel it! (Na na na...)
-
-     Make it sound like! (Na na na...)
-
-    All around like! (Na na na...)
-
-    Sing it loud like! (Na na na...)
-
-    Gonna feel like! (Na na na...)
-                </pre>
+                <!-- <button class="btn go-back">&lsaquo;</button>
+                <h2 class="text-success mb-4"></h2>
+                <pre  class="lyric text-white">
+                    
+                </pre> -->
+               <pre>
+                <p  id="shownLyrics" class="text-white bg-dark"></p>
+               </pre>
+                
             </div>
             <!-- === Fancy results === -->
             <div class="search-result col-md-8 mx-auto py-4">
@@ -230,53 +142,73 @@
             .then(response => response.json())
             .then(data => {
                 
-            // const firstSong = data.data[0];
-            // songTitle = data.data[0].title ;
+            
             artist1 = data.data[0].artist.name;
             title1 = data.data[0].title;
             url = "https://api.lyrics.ovh/v1/" + artist1 +"/"+ title1
             fetch(url)
             .then(response => response.json())
             .then(data => {
-                console.log(data)
-                document.getElementById("1SearchBox").innerHTML =  data
+                 finalOutput = data.lyrics;
+                
+                document.getElementById('firstButton').addEventListener("click", function(){
+                    document.getElementById("shownLyrics").innerHTML = ` ${finalOutput} ` ; 
+                    
+                })
+                
             })
 
-            artist2 = data.data[1].artist.name;
-            title2 = data.data[1].title;
-            url = "https://api.lyrics.ovh/v1/" + artist2 +"/"+ title2
-            fetch(url)
-            .then(response => response.json())
-            .then(data => {
-                console.log(data)
-            })
+        //     artist2 = data.data[1].artist.name;
+        //     title2 = data.data[1].title;
+        //     url = "https://api.lyrics.ovh/v1/" + artist2 +"/"+ title2
+        //     fetch(url)
+        //     .then(response => response.json())
+        //     .then(data => {
+        //         finalOutput = data.lyrics;
+                
+        //         document.getElementById('secondButton').addEventListener("click", function(){
+        //             document.getElementById("shownLyrics").innerHTML = ` ${finalOutput} ` ;
+        //     })
+        // })
 
-            artist3 = data.data[2].artist.name;
-            title3 = data.data[2].title;
-            url = "https://api.lyrics.ovh/v1/" + artist3 +"/"+ title3
-            fetch(url)
-            .then(response => response.json())
-            .then(data => {
-                console.log(data)
-            })
+        //     artist3 = data.data[2].artist.name;
+        //     title3 = data.data[2].title;
+        //     url = "https://api.lyrics.ovh/v1/" + artist3 +"/"+ title3
+        //     fetch(url)
+        //     .then(response => response.json())
+        //     .then(data => {
+        //         finalOutput = data.lyrics;
+                
+        //         document.getElementById('thirdButton').addEventListener("click", function(){
+        //             document.getElementById("shownLyrics").innerHTML = ` ${finalOutput} ` ;
+        //     })
+        // })
 
-            artist4 = data.data[3].artist.name;
-            title4 = data.data[3].title;
-            url = "https://api.lyrics.ovh/v1/" + artist4 +"/"+ title4
-            fetch(url)
-            .then(response => response.json())
-            .then(data => {
-                console.log(data)
-            })
+        //     artist4 = data.data[3].artist.name;
+        //     title4 = data.data[3].title;
+        //     url = "https://api.lyrics.ovh/v1/" + artist4 +"/"+ title4
+        //     fetch(url)
+        //     .then(response => response.json())
+        //     .then(data => {
+        //         finalOutput = data.lyrics;
+                
+        //         document.getElementById('fourthButton').addEventListener("click", function(){
+        //             document.getElementById("shownLyrics").innerHTML = ` ${finalOutput} ` ;
+        //     })
+        // })
 
-            artist5 = data.data[4].artist.name;
-            title5 = data.data[4].title;
-            url = "https://api.lyrics.ovh/v1/" + artist5 +"/"+ title5
-            fetch(url)
-            .then(response => response.json())
-            .then(data => {
-                console.log(data)
-            })
+        //     artist5 = data.data[4].artist.name;
+        //     title5 = data.data[4].title;
+        //     url = "https://api.lyrics.ovh/v1/" + artist5 +"/"+ title5
+        //     fetch(url)
+        //     .then(response => response.json())
+        //     .then(data => {
+        //         finalOutput = data.lyrics;
+                
+        //         document.getElementById('fifthButton').addEventListener("click", function(){
+        //             document.getElementById("shownLyrics").innerHTML = ` ${finalOutput} ` ;
+        //     })
+        // })
 
 
              
@@ -291,7 +223,7 @@
              document.getElementById("albumBox3").innerHTML =  data.data[2].album.title;
              document.getElementById("albumBox4").innerHTML =  data.data[3].album.title;
              document.getElementById("albumBox5").innerHTML =  data.data[4].album.title;
-            //  console.log(songTitle);
+            
                 
                 });
             });
