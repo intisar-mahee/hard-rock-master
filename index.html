@@ -60,17 +60,12 @@
                     <p  class="author lead"><strong id="albumBox5"></strong> Album by <span id="5SearchBox"></span> <button id="fifthButton" class="btn btn-success">Get Lyrics</button></p>
                 </div>
             </div>
+
             <!-- Single Lyrics -->
             <div class="single-lyrics text-center">
-                <!-- <button class="btn go-back">&lsaquo;</button>
-                <h2 class="text-success mb-4"></h2>
-                <pre  class="lyric text-white">
-                    
-                </pre> -->
-               <pre>
-                <p  id="shownLyrics" class="text-white bg-dark"></p>
-               </pre>
                 
+                <p id="shownLyrics"></p>
+                    
             </div>
             <!-- === Fancy results === -->
             <div class="search-result col-md-8 mx-auto py-4">
@@ -149,66 +144,66 @@
             fetch(url)
             .then(response => response.json())
             .then(data => {
-                 finalOutput = data.lyrics;
+                 let finalOutput = data.lyrics;
                 
                 document.getElementById('firstButton').addEventListener("click", function(){
-                    document.getElementById("shownLyrics").innerHTML = ` ${finalOutput} ` ; 
+                    document.getElementById("shownLyrics").innerHTML = `<pre>${finalOutput}</pre> ` ;
                     
                 })
                 
             })
 
-        //     artist2 = data.data[1].artist.name;
-        //     title2 = data.data[1].title;
-        //     url = "https://api.lyrics.ovh/v1/" + artist2 +"/"+ title2
-        //     fetch(url)
-        //     .then(response => response.json())
-        //     .then(data => {
-        //         finalOutput = data.lyrics;
+            artist2 = data.data[1].artist.name;
+            title2 = data.data[1].title;
+            url = "https://api.lyrics.ovh/v1/" + artist2 +"/"+ title2
+            fetch(url)
+            .then(response => response.json())
+            .then(data => {
+               let finalOutput = data.lyrics;
                 
-        //         document.getElementById('secondButton').addEventListener("click", function(){
-        //             document.getElementById("shownLyrics").innerHTML = ` ${finalOutput} ` ;
-        //     })
-        // })
+                document.getElementById('secondButton').addEventListener("click", function(){
+                    document.getElementById("shownLyrics").innerHTML = `<pre>${finalOutput}</pre> ` ;
+            })
+        })
 
-        //     artist3 = data.data[2].artist.name;
-        //     title3 = data.data[2].title;
-        //     url = "https://api.lyrics.ovh/v1/" + artist3 +"/"+ title3
-        //     fetch(url)
-        //     .then(response => response.json())
-        //     .then(data => {
-        //         finalOutput = data.lyrics;
+            artist3 = data.data[2].artist.name;
+            title3 = data.data[2].title;
+            url = "https://api.lyrics.ovh/v1/" + artist3 +"/"+ title3
+            fetch(url)
+            .then(response => response.json())
+            .then(data => {
+              let finalOutput = data.lyrics;
                 
-        //         document.getElementById('thirdButton').addEventListener("click", function(){
-        //             document.getElementById("shownLyrics").innerHTML = ` ${finalOutput} ` ;
-        //     })
-        // })
+                document.getElementById('thirdButton').addEventListener("click", function(){
+                    document.getElementById("shownLyrics").innerHTML = `<pre>${finalOutput}</pre> ` ;
+            })
+        })
 
-        //     artist4 = data.data[3].artist.name;
-        //     title4 = data.data[3].title;
-        //     url = "https://api.lyrics.ovh/v1/" + artist4 +"/"+ title4
-        //     fetch(url)
-        //     .then(response => response.json())
-        //     .then(data => {
-        //         finalOutput = data.lyrics;
+            artist4 = data.data[3].artist.name;
+            title4 = data.data[3].title;
+            url = "https://api.lyrics.ovh/v1/" + artist4 +"/"+ title4
+            fetch(url)
+            .then(response => response.json())
+            .then(data => {
+               let finalOutput = data.lyrics;
                 
-        //         document.getElementById('fourthButton').addEventListener("click", function(){
-        //             document.getElementById("shownLyrics").innerHTML = ` ${finalOutput} ` ;
-        //     })
-        // })
+                document.getElementById('fourthButton').addEventListener("click", function(){
+                    document.getElementById("shownLyrics").innerHTML = `<pre>${finalOutput}</pre> ` ;
+            })
+        })
 
-        //     artist5 = data.data[4].artist.name;
-        //     title5 = data.data[4].title;
-        //     url = "https://api.lyrics.ovh/v1/" + artist5 +"/"+ title5
-        //     fetch(url)
-        //     .then(response => response.json())
-        //     .then(data => {
-        //         finalOutput = data.lyrics;
+            artist5 = data.data[4].artist.name;
+            title5 = data.data[4].title;
+            url = "https://api.lyrics.ovh/v1/" + artist5 +"/"+ title5
+            fetch(url)
+            .then(response => response.json())
+            .then(data => {
+               let finalOutput = data.lyrics;
                 
-        //         document.getElementById('fifthButton').addEventListener("click", function(){
-        //             document.getElementById("shownLyrics").innerHTML = ` ${finalOutput} ` ;
-        //     })
-        // })
+                document.getElementById('fifthButton').addEventListener("click", function(){
+                    document.getElementById("shownLyrics").innerHTML = `<pre>${finalOutput}</pre> ` ;
+            })
+        })
 
 
              
@@ -236,28 +231,7 @@
     
 
     
-    <!-- <script>
-                // document.getElementById("firstButton").addEventListener("click", function(){ 
-                // document.getElementById("1SearchBox").innerHTML = artistName1;
-                // })
-
-                document.getElementById("searchButton").addEventListener("click", function(){ 
-                    document.getElementById("1SearchBox").innerHTML =  artistName2;
-                });
-
-                document.getElementById("searchButton").addEventListener("click", function(){ 
-                    document.getElementById("1SearchBox").innerHTML = artistName3;
-                });
-
-                document.getElementById("searchButton").addEventListener("click", function(){ 
-                    document.getElementById("1SearchBox").innerHTML = artistName4;
-                });
-
-                 document.getElementById("searchButton").addEventListener("click", function(){ 
-                    document.getElementById("1SearchBox").innerHTML = artistName5;
-                });                         
-    </script> -->
-
+   
 
 
 </body>
